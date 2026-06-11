@@ -1,0 +1,135 @@
+@import "tailwindcss" source(none);
+@import "tw-animate-css";
+
+@source "../src";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+:root {
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-mono: "DM Mono", monospace;
+
+  /* Neo-Brutalist palette — red accent */
+  --neo-bg: #F5F0E8;
+  --neo-red: #E63946;
+  --neo-red-deep: #C1121F;
+  --neo-yellow: #F0E040;
+  --neo-text: #1A1A1A;
+
+  --radius: 0;
+  --background: #F5F0E8;
+  --foreground: #1A1A1A;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+  --primary: #E63946;
+  --primary-foreground: #1A1A1A;
+  --secondary: #F0E040;
+  --secondary-foreground: #1A1A1A;
+  --muted: #ECECEF;
+  --muted-foreground: #717182;
+  --accent: #E63946;
+  --accent-foreground: #1A1A1A;
+  --destructive: #C1121F;
+  --destructive-foreground: #FFFFFF;
+  --border: #1A1A1A;
+  --input: #FFFFFF;
+  --ring: #E63946;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-display);
+  }
+
+  /* Hide native cursor — custom cursor handles all pointer feedback */
+  /* @media (pointer: fine) {
+
+    html,
+    body,
+    *,
+    *::before,
+    *::after,
+    a,
+    button,
+    input,
+    textarea,
+    select,
+    label,
+    [role="button"] {
+      cursor: none !important;
+    }
+  } */
+  @media (pointer: fine) {
+
+    html,
+    body {
+      cursor: none;
+    }
+
+    button,
+    a,
+    .nav-link,
+    [role="button"] {
+      cursor: pointer !important;
+    }
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
