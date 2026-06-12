@@ -14,15 +14,36 @@ export function Navbar() {
     { id: "contact", label: "Contact" },
   ];
 
+  // const handleNavClick = (id: string) => {
+  //   setActiveSection(id);
+  //   setMenuOpen(false);
+  //   const element = document.getElementById(id);
+  //   if (element) {
+  //     // element.scrollIntoView({ behavior: "smooth" });
+  //     const y = element.getBoundingClientRect().top + window.scrollY - 80;
+
+  //     window.scrollTo({
+  //       top: y,
+  //     });
+  //   }
+  // };
+
   const handleNavClick = (id: string) => {
     setActiveSection(id);
     setMenuOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
+    setTimeout(() => {
+      const element = document.getElementById(id);
+
+      if (!element) return;
+
+      const y = element.getBoundingClientRect().top + window.scrollY - 80;
+
+      window.scrollTo({
+        top: y,
+      });
+    }, 300);
+  };
   return (
     <motion.nav
       initial={{ y: -100 }}
