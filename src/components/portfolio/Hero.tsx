@@ -181,7 +181,9 @@ export function Hero() {
               </motion.button>
 
               <motion.a
-                href="mailto:dipakshedge160@gmail.com"
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   boxShadow: "5px 5px 0px #1A1A1A",
                   fontFamily: "var(--font-mono)",
@@ -193,7 +195,7 @@ export function Hero() {
                   transition: { type: "spring", stiffness: 400 },
                 }}
               >
-                Get in Touch ↗
+                View Resume ↗
               </motion.a>
             </motion.div>
           </motion.div>
